@@ -1,0 +1,104 @@
+                        Orientação à Objetos, paradigma mais utilizado nas empresas de tecnologia.
+___Fundamentos___
+
+    *Objetos*
+> Algo que encapsula dados (variáveis == atributos) e código (funções == métodos)
+
+    *Classe*
+> Blueprint que define os elementos presentes em um conjunto de objeto(atributos e variáveis)
+> Fábrica de Objetos (INSTANCIAÇÃO DE OBJETO)
+    C = Carro()
+
+    *Comunicação entre Objetos*
+>Chamade de métodos
+
+    *Abstração*
+>Real || Virtual
+>selecionar apenas o importante
+
+    *Variável de Instância(X) ||| Variável de Classe(Y)*
+    class Bola: Y
+        conta_bolas = 0
+
+        def __init__(self, diametro) X  
+            self.diametro = diametro
+            conta_bolas+=1
+
+    *Pacotes*
+>Forma de Organizar Classes
+
+    meu_pacote/
+├── __init__.py
+├── modulo1.py --> contém método "funcao_modulo1"
+├── modulo2.py
+
+from meu_pacote import modulo1
+
+modulo1.funcao_modulo1()
+
+    *Especificadores de Acesso*
+>public
+>privite
+>protected
+
+    *Classes Abstratas*
+>Define um tipo de objeto que vai possuir determinado método, sem definir a implementação do método prioritariamente
+
+
+
+Classe(Blueprint do Objeto)
+|     |-->Atributos
+| obj |
+|     |-->Métodos
+
+class carro;
+def __init__ (self, modelo , cor):
+    self.modelo = modelo;
+    self.cor = cor;
+    self.velocidade = 0;
+
+def acelerar(self):
+    self.velocidade += 10;
+    print(f"{self.modelo} está acelerando a {self.velocida} km/h")
+
+# Criando uma instância da classe, AKA objeto
+ = carro("Toyota", "Cinza");
+
+# def == inicializador de função em Python(n precisa colocar o datatype no início)
+# __init__ == novo objeto em Classe
+
+# self == Referência ao próprio objeto
+
+
+                                                *ENCAPSULAMENTO*
+ >esconder a implementação interna de uma classe e restringir o acesso direto aos seus atributos e métodos. 
+class ContaBancaria:
+    def __init__(self, titular, saldo):
+        self.__titular = titular   # Atributo privado
+        self.__saldo = saldo       # Atributo privado
+
+    # Método getter para o titular
+    def get_titular(self):
+        return self.__titular
+
+    # Método getter para o saldo
+    def get_saldo(self):  ================> Um getter é um método que retorna o valor de um atributo
+
+    # Método setter para o saldo
+    def set_saldo(self, novo_saldo):  =================> Um setter é um método que modifica o valor de um atributo.
+        return self.__saldo
+        if novo_saldo >= 0:
+            self.__saldo = novo_saldo
+        else:
+            print("Saldo não pode ser negativo.")
+
+# Método para realizar um saque
+    def sacar(self, valor):
+        if valor > 0 and valor <= self.__saldo:
+            self.__saldo -= valor
+            print(f"Saque de {valor} realizado com sucesso. Novo saldo: {self.__saldo}")
+        else:
+            print("Saque inválido. Verifique o valor ou saldo disponível.") 
+
+                                                *HERANÇA*
+
